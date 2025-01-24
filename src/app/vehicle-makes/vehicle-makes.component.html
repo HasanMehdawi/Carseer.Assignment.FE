@@ -1,0 +1,47 @@
+<div style="margin-bottom: 16px;">
+    <mat-form-field appearance="fill">
+      <mat-label>Search</mat-label>
+      <!-- Add `matInput` to the input element -->
+      <input matInput (keyup)="applyFilter($event)" placeholder="Search in table" />
+    </mat-form-field>
+  </div>
+<table mat-table [dataSource]="dataSource" matSort>
+
+    <!-- Column Definitions -->
+    <ng-container matColumnDef="Make_id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 33%;"> Make id </th>
+      <td mat-cell *matCellDef="let element" style="width: 33%;" class="font"> {{element.Make_id}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="Make_name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 55%;"> Make name </th>
+      <td mat-cell *matCellDef="let element" style="width: 55%;" class="font"> {{element.Make_name}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="Option">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 12%;"> Option </th>
+      <td mat-cell *matCellDef="let element" style="width: 12%;">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <span class="font" (click)="navigateToVehicleTypesPage(element.Make_id)">Vehicle Types</span>
+        </button>
+        <button mat-menu-item >
+          <span class="font" (click)="navigateToVehicleDetailesWithYearPage(element.Make_id)">Vehicle Models</span>
+        </button>
+      </mat-menu>
+      </td>
+    </ng-container>
+  
+    <!-- Table Headers -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <!-- Table Rows -->
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+  </table>
+  
+  <!-- Paginator -->
+  <mat-paginator [length]="data.length" [pageSize]="20" [pageSizeOptions]="[10, 20, 50]" (page)="pageEvent($event)">
+  </mat-paginator>
