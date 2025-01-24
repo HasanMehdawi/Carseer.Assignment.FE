@@ -1,0 +1,20 @@
+<div *ngIf="data.length > 0">
+    <div>
+        <div class="table-header">
+        <div class="header-title">
+            Make id
+        </div>
+        <div class="header-title">
+          Make name
+        </div>
+      </div>
+      <div *ngFor="let item of data" class="table-row">
+       <div class="table-data">
+        {{ item.vehicleTypeId }} 
+       </div> 
+       <div class="table-data">
+        {{ item.vehicleTypeName }}
+       </div>
+      </div>
+  </div>
+  </div>

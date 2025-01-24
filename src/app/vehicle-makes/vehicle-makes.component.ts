@@ -87,7 +87,7 @@ export class VehicleMakesComponent implements OnInit {
     return this.http.get<any>(`${this.apiUrl}`);
   }
   navigateToVehicleTypesPage(id: number) {
-    
+    this.router.navigate(['./vehicle-types' ,id]); 
   }
 
   navigateToVehicleDetailesWithYearPage(id: number) {
