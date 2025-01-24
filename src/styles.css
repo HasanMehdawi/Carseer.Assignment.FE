@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+.content {
+    margin-top: 75px;
+    padding:25px 50px;
+    background-color: #f1eded;
+    min-height: 83vh;
+}
+
+.title
+{
+    background-color: #f93;
+    font-size: 35px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    border-bottom: black solid 4px;
+    padding: 15px;
+    font-weight: bold;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+}
