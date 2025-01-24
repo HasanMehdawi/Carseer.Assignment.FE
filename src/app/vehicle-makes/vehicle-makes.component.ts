@@ -91,7 +91,7 @@ export class VehicleMakesComponent implements OnInit {
   }
 
   navigateToVehicleDetailesWithYearPage(id: number) {
-    
+    this.router.navigate(['./vehicle-models' ,id]); 
   }
 }
 interface ApiCarMake {

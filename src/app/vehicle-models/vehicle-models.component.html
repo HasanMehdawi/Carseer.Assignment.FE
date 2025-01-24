@@ -1,0 +1,52 @@
+<mat-form-field appearance="fill" class="x">
+    <!-- Hidden input to associate with the MatDatepicker -->
+    <input matInput [matDatepicker]="picker" style="display: none;">
+  
+    <!-- Button to open the date picker -->
+    <button class="date-filter"
+     style="background-color: #f93 ; border: none;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;    padding-top: 16PX;
+padding-bottom: 16px;
+" (click)="openDatePicker()">Choose a Year</button>
+  </mat-form-field>
+  
+  <!-- Datepicker instance -->
+  <mat-datepicker 
+    #picker 
+    startView="multi-year" 
+    (yearSelected)="onYearSelected($event, picker)" 
+    panelClass="year-only-picker">
+  </mat-datepicker>
+
+<table mat-table [dataSource]="dataSource" matSort>
+
+    <!-- Column Definitions -->
+    <ng-container matColumnDef="make_ID">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 25%;">Make ID</th>
+      <td mat-cell *matCellDef="let element" style="width: 25%;"> {{element.make_ID}} </td>
+    </ng-container>
+    <ng-container matColumnDef="model_ID">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 25%;">Model ID</th>
+        <td mat-cell *matCellDef="let element" style="width: 25%;"> {{element.model_ID}} </td>
+      </ng-container>
+      <ng-container matColumnDef="make_Name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 25%;">Make Name</th>
+        <td mat-cell *matCellDef="let element" style="width: 25%;"> {{element.make_Name}} </td>
+      </ng-container>
+    <ng-container matColumnDef="model_Name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 55%;"> Model Name</th>
+      <td mat-cell *matCellDef="let element" style="width: 25%;"> {{element.model_Name}} </td>
+    </ng-container>
+        
+    <!-- Table Headers -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <!-- Table Rows -->
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+  </table>
+  
+  <!-- Paginator -->
+  <mat-paginator [length]="data.length" [pageSize]="20" [pageSizeOptions]="[10, 20, 50]" (page)="pageEvent($event)">
+  </mat-paginator>

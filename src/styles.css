@@ -56,3 +56,40 @@
     /* border: 1px black solid; */
     background-color: white;
 }
+
+.mat-mdc-row, .mdc-data-table__content 
+{
+width: 33%;
+}
+
+.mat-mdc-row {
+    height: var(--mat-table-row-item-container-height, 45px) !important;
+    font-size: 12px !important;
+
+}
+
+
+.year-only-picker .mat-calendar-body-cell-content:not(.mat-calendar-body-selected) {
+    pointer-events: none;
+  }
+.date-filter .mat-mdc-form-field-icon-suffix {
+    color: var(--mat-form-field-trailing-icon-color, var(--mat-sys-on-surface-variant));
+    /* display: none; */
+}
+.mdc-text-field--filled:not(.mdc-text-field--disabled):has(.date-filter) {
+        background-color: #f93 !important;
+        border-radius: 4px;
+        width: 135px;
+        border: none;
+        padding: 0 !important;
+    }
+.mat-mdc-form-field-flex:has(.date-filter){
+        margin-bottom: -6px;
+    }
+    .x .mat-mdc-form-field-infix {
+        padding: 0 !important ;
+    }
+.mat-mdc-form-field-infix :has(.date-filter) {
+    padding: 0 !important;
+    min-height:20px !important;
+}
