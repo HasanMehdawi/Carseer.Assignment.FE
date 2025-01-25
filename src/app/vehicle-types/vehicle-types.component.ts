@@ -16,7 +16,7 @@ export class VehicleTypesComponent implements OnInit {
   id!: number;
   data: any[] = [];
   
-  private apiUrl = 'https://localhost:7019/api/Vehicles/makes/{id}/types'; // Update API URL if needed
+  private apiUrl = 'http://localhost:6999/api/Vehicles/makes/{id}/types'; // Update API URL if needed
   displayedColumns: string[] = ['vehicleTypeId', 'vehicleTypeName'];
   dataSource = new MatTableDataSource(this.data);
 

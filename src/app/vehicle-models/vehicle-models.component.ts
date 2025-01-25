@@ -56,7 +56,7 @@ export class VehicleModelsComponent implements OnInit {
     datepicker.close(); // Close the picker after selecting a year
   }
 
-  private apiUrl = 'https://localhost:7019/api/Vehicles/makes/{id}/year/{year}/models'; // Update API URL if needed
+  private apiUrl = 'http://localhost:6999/api/Vehicles/makes/{id}/year/{year}/models'; // Update API URL if needed
   displayedColumns: string[] = ['make_ID', 'model_ID' ,"make_Name" ,"model_Name"];
   dataSource = new MatTableDataSource(this.data);
   @ViewChild(MatPaginator) paginator!: MatPaginator;

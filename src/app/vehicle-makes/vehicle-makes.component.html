@@ -25,11 +25,11 @@
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item>
-          <span class="font" (click)="navigateToVehicleTypesPage(element.Make_id)">Vehicle Types</span>
+        <button mat-menu-item (click)="navigateToVehicleTypesPage(element.Make_id)">
+          <span class="font">Vehicle Types</span>
         </button>
-        <button mat-menu-item >
-          <span class="font" (click)="navigateToVehicleDetailesWithYearPage(element.Make_id)">Vehicle Models</span>
+        <button mat-menu-item (click)="navigateToVehicleDetailesWithYearPage(element.Make_id)">
+          <span class="font">Vehicle Models</span>
         </button>
       </mat-menu>
       </td>

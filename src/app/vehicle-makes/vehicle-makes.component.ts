@@ -32,7 +32,7 @@ import { MatInputModule } from '@angular/material/input';
 })
 export class VehicleMakesComponent implements OnInit {
   data: TableCarMake[] = [];
-  private apiUrl = 'https://localhost:7019/api/Vehicles/makes';  // Replace with your API URL
+  private apiUrl = 'http://localhost:6999/api/Vehicles/makes';  // Replace with your API URL
   displayedColumns: string[] = ['Make_id', 'Make_name', 'Option'];
   dataSource = new MatTableDataSource(this.data);
   
